@@ -13,7 +13,7 @@ export class RedSocialEntityEntity {
     @Column()
     slogan: string;
 
-    @OneToMany(() => UsuarioEntityEntity, usuarios => .usuarios)
-    fotos: FotoEntityEntity[];
+    @OneToMany(() => UsuarioEntityEntity, usuarios => usuarios.redSocial)
+    usuarios: UsuarioEntityEntity[];
 
 }

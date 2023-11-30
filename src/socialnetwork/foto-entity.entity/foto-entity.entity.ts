@@ -22,8 +22,8 @@ export class FotoEntityEntity {
     @Column({type:'int'})
     apertura: number;
 
-    @ManyToOne(() => RedSocialEntityEntity, redSocial => redSocial.fotos)
-    redSocial: RedSocialEntityEntity;
+    //@ManyToOne(() => RedSocialEntityEntity, redSocial => redSocial.fotos)
+    //redSocial: RedSocialEntityEntity;
 
     @ManyToOne(() => UsuarioEntityEntity, usuario => usuario.fotos)
     usuario: UsuarioEntityEntity;

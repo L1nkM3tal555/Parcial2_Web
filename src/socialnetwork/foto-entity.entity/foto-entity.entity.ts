@@ -8,19 +8,19 @@ import { UsuarioEntityEntity } from "../usuario-entity.entity/usuario-entity.ent
 @Entity()
 export class FotoEntityEntity {
     @PrimaryGeneratedColumn("uuid")
-    id: long;
+    id: string;
  
     @Column()
     fecha: string;
  
-    @Column()
-    iso: int;
+    @Column({type:'int'})
+    iso: number;
 
-    @Column()
-    velObturacion: int;
+    @Column({type:'int'})
+    velObturacion: number;
 
-    @Column()
-    apertura: int;
+    @Column({type:'int'})
+    apertura: number;
 
     @ManyToOne(() => RedSocialEntityEntity, redSocial => redSocial.fotos)
     redSocial: RedSocialEntityEntity;

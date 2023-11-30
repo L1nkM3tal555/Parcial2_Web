@@ -1,6 +1,7 @@
 
 import { Column, Entity, JoinColumn, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { RedSocialEntityEntity } from "../red-social-entity.entity/red-social-entity.entity";
+import { AlbumEntityEntity } from "../album-entity.entity/album-entity.entity";
 
 
 @Entity()
@@ -22,5 +23,8 @@ export class FotoEntityEntity {
 
     @ManyToOne(() => RedSocialEntityEntity, redSocial => redSocial.fotos)
     redSocial: RedSocialEntityEntity;
+
+    @ManyToOne(() => AlbumEntityEntity, album => album.fotos)
+    album: AlbumEntityEntity;
 
 }

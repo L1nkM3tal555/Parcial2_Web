@@ -10,18 +10,21 @@ exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
-const socialnetwork_module_1 = require("./socialnetwork/socialnetwork.module");
-const album_entity_entity_1 = require("./socialnetwork/album-entity.entity/album-entity.entity");
-const red_social_entity_entity_1 = require("./socialnetwork/red-social-entity.entity/red-social-entity.entity");
-const foto_entity_entity_1 = require("./socialnetwork/foto-entity.entity/foto-entity.entity");
-const usuario_entity_entity_1 = require("./socialnetwork/usuario-entity.entity/usuario-entity.entity");
+const album_entity_1 = require("./album/album.entity/album.entity");
+const red_social_entity_1 = require("./red-social/red-social.entity/red-social.entity");
+const foto_entity_1 = require("./foto/foto.entity/foto.entity");
+const usuario_entity_1 = require("./usuario/usuario.entity/usuario.entity");
 const typeorm_1 = require("@nestjs/typeorm");
+const foto_module_1 = require("./foto/foto.module");
+const usuario_module_1 = require("./usuario/usuario.module");
+const red_social_module_1 = require("./red-social/red-social.module");
+const album_module_1 = require("./album/album.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [socialnetwork_module_1.SocialnetworkModule,
+        imports: [
             typeorm_1.TypeOrmModule.forRoot({
                 type: 'postgres',
                 host: 'localhost',
@@ -29,11 +32,16 @@ exports.AppModule = AppModule = __decorate([
                 username: 'postgres',
                 password: 'postgres',
                 database: 'socialnetworks',
-                entities: [album_entity_entity_1.AlbumEntityEntity, red_social_entity_entity_1.RedSocialEntityEntity, foto_entity_entity_1.FotoEntityEntity, usuario_entity_entity_1.UsuarioEntityEntity],
+                entities: [album_entity_1.AlbumEntity, red_social_entity_1.RedSocialEntity, foto_entity_1.FotoEntity, usuario_entity_1.UsuarioEntity],
                 dropSchema: true,
                 synchronize: true,
                 keepConnectionAlive: true
-            }),],
+            }),
+            foto_module_1.FotoModule,
+            usuario_module_1.UsuarioModule,
+            red_social_module_1.RedSocialModule,
+            album_module_1.AlbumModule,
+        ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
     })

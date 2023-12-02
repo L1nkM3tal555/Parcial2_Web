@@ -1,15 +1,18 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { SocialnetworkModule } from './socialnetwork/socialnetwork.module';
-import { AlbumEntityEntity } from './socialnetwork/album-entity.entity/album-entity.entity';
-import { RedSocialEntityEntity } from './socialnetwork/red-social-entity.entity/red-social-entity.entity';
-import { FotoEntityEntity } from './socialnetwork/foto-entity.entity/foto-entity.entity';
-import { UsuarioEntityEntity } from './socialnetwork/usuario-entity.entity/usuario-entity.entity';
+import { AlbumEntity } from './album/album.entity/album.entity';
+import { RedSocialEntity } from './red-social/red-social.entity/red-social.entity';
+import { FotoEntity } from './foto/foto.entity/foto.entity';
+import { UsuarioEntity } from './usuario/usuario.entity/usuario.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { FotoModule } from './foto/foto.module';
+import { UsuarioModule } from './usuario/usuario.module';
+import { RedSocialModule } from './red-social/red-social.module';
+import { AlbumModule } from './album/album.module';
 
 @Module({
-  imports: [SocialnetworkModule,
+  imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',
@@ -17,11 +20,15 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       username: 'postgres',
       password: 'postgres',
       database: 'socialnetworks',
-      entities: [AlbumEntityEntity,RedSocialEntityEntity,FotoEntityEntity,UsuarioEntityEntity],
+      entities: [AlbumEntity,RedSocialEntity,FotoEntity,UsuarioEntity],
       dropSchema: true,
       synchronize: true,
       keepConnectionAlive: true
-    }),],
+    }),
+    FotoModule,
+    UsuarioModule,
+    RedSocialModule,
+    AlbumModule,],
   controllers: [AppController],
   providers: [AppService],
 })

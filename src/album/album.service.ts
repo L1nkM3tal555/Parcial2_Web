@@ -11,7 +11,7 @@ export class AlbumService {
         private readonly albumRepository: Repository<AlbumEntity>
     ){}
 
-    async create(album: AlbumEntity): Promise<AlbumEntity> {
+    async createAlbum(album: AlbumEntity): Promise<AlbumEntity> {
         if (album.titulo !== '' && album.titulo){
             return await this.albumRepository.save(album);
         }

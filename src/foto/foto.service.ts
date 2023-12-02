@@ -12,7 +12,7 @@ export class FotoService {
         private readonly fotoRepository: Repository<FotoEntity>
     ){}
 
-    async create(foto: FotoEntity): Promise<FotoEntity> {
+    async createFoto(foto: FotoEntity): Promise<FotoEntity> {
         const minIso = 100;
         const maxIso = 6400;
 

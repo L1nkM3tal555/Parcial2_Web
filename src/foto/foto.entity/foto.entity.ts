@@ -9,7 +9,7 @@ export class FotoEntity {
     id: string;
  
     @Column()
-    fecha: string;
+    fecha: Date;
  
     @Column({type:'int'})
     iso: number;

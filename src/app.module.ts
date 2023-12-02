@@ -10,6 +10,7 @@ import { FotoModule } from './foto/foto.module';
 import { UsuarioModule } from './usuario/usuario.module';
 import { RedSocialModule } from './red-social/red-social.module';
 import { AlbumModule } from './album/album.module';
+import { AlbumFotoService } from './album-foto/album-foto.service';
 
 @Module({
   imports: [
@@ -30,6 +31,6 @@ import { AlbumModule } from './album/album.module';
     RedSocialModule,
     AlbumModule,],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, AlbumFotoService],
 })
 export class AppModule {}

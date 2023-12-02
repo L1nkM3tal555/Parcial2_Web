@@ -43,6 +43,10 @@ export class AlbumFotoService {
           throw new BusinessLogicException("The album with the given id was not found", BusinessError.NOT_FOUND);
         
         const albumFoto: FotoEntity = album.fotos.find(e => e.id === foto.id);
+        if (!albumFoto)
+           throw new BusinessLogicException("The foto with the given id is not associated to the album", BusinessError.PRECONDITION_FAILED)
+
+
         if (album.fotos.length === 1){
             album.fotos = album.fotos.filter(e => e.id !== fotoId);
             await this.fotoRepository.remove(foto);

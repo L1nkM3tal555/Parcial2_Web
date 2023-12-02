@@ -1,6 +1,6 @@
 import { Column, Entity, JoinColumn, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
-import { RedSocialEntity } from "src/red-social/red-social.entity/red-social.entity";
-import { UsuarioEntity } from "src/usuario/usuario.entity/usuario.entity";
+//import { RedSocialEntity } from "src/red-social/red-social.entity/red-social.entity";
+//import { UsuarioEntity } from "src/usuario/usuario.entity/usuario.entity";
 import { FotoEntity } from "src/foto/foto.entity/foto.entity";
 
 

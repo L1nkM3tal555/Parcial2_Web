@@ -11,7 +11,7 @@ export class RedSocialService {
         private readonly redSocialRepository: Repository<RedSocialEntity>
     ){}
     
-    async create(redSocial: RedSocialEntity): Promise<RedSocialEntity> {
+    async createRedSocial(redSocial: RedSocialEntity): Promise<RedSocialEntity> {
 
         if (redSocial.slogan !== '' && redSocial.slogan){
 

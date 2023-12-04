@@ -11,7 +11,7 @@ export class UsuarioService {
         private readonly usuarioRepository: Repository<UsuarioEntity>
     ){}
 
-    async create(usuario: UsuarioEntity): Promise<UsuarioEntity> {
+    async createUsuario(usuario: UsuarioEntity): Promise<UsuarioEntity> {
         if (usuario.telefono.length === 10){
             return await this.usuarioRepository.save(usuario);
         }

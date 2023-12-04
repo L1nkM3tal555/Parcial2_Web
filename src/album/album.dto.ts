@@ -1,6 +1,6 @@
 import { IsDate, IsNotEmpty, IsNumber, IsString, IsUrl } from "class-validator";
 
-export class AlbumkDto {    
+export class AlbumDto {    
     @IsString()
     @IsNotEmpty()
     readonly id: string;

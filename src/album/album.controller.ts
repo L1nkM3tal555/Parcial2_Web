@@ -1,4 +1,9 @@
-import { Controller } from '@nestjs/common';
+import { Controller, UseInterceptors } from '@nestjs/common';
+import { AlbumService } from './album.service';
+import { BusinessErrorsInterceptor } from 'src/shared/interceptors/business-errors/business-errors.interceptor';
 
 @Controller('album')
-export class AlbumController {}
+@UseInterceptors(BusinessErrorsInterceptor)
+export class AlbumController {
+    constructor(private readonly albumService: AlbumService) {}
+}

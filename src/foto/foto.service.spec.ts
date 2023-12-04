@@ -2,11 +2,11 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { FotoService } from './foto.service';
 import { Repository } from 'typeorm';
 import { TypeOrmTestingConfig } from '../shared/testing-utils/typeorm-testing-config';
-import { FotoEntity } from './foto.entity/foto.entity';
+import { FotoEntity } from './foto.entity';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { faker } from '@faker-js/faker';
-import { AlbumEntity } from 'src/album/album.entity/album.entity';
-import { UsuarioEntity } from 'src/usuario/usuario.entity/usuario.entity';
+import { AlbumEntity } from 'src/album/album.entity';
+import { UsuarioEntity } from 'src/usuario/usuario.entity';
 
 describe('FotoService', () => {
  let service: FotoService;

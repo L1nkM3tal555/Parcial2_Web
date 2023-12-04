@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { RedSocialService } from './red-social.service';
 import { Repository } from 'typeorm';
 import { TypeOrmTestingConfig } from '../shared/testing-utils/typeorm-testing-config';
-import { RedSocialEntity } from './red-social.entity/red-social.entity';
+import { RedSocialEntity } from './red-social.entity';
 import { getRepositoryToken } from '@nestjs/typeorm';
 
 describe('RedSocialService', () => {

@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AlbumEntity } from './album/album.entity/album.entity';
-import { RedSocialEntity } from './red-social/red-social.entity/red-social.entity';
-import { FotoEntity } from './foto/foto.entity/foto.entity';
-import { UsuarioEntity } from './usuario/usuario.entity/usuario.entity';
+import { AlbumEntity } from './album/album.entity';
+import { RedSocialEntity } from './red-social/red-social.entity';
+import { FotoEntity } from './foto/foto.entity';
+import { UsuarioEntity } from './usuario/usuario.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { FotoModule } from './foto/foto.module';
 import { UsuarioModule } from './usuario/usuario.module';

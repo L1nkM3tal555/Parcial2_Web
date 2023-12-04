@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
-import { FotoEntity } from './foto.entity/foto.entity';
+import { FotoEntity } from './foto.entity';
 import { InjectRepository } from '@nestjs/typeorm';
-import { BusinessError, BusinessLogicException } from 'src/shared/errors/business-errors';
-import { AlbumEntity } from 'src/album/album.entity/album.entity';
+import { BusinessError, BusinessLogicException } from '../shared/errors/business-errors';
+//import { AlbumEntity } from 'src/album/album.entity/album.entity';
 
 @Injectable()
 export class FotoService {

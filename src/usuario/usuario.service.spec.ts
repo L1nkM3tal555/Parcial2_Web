@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { UsuarioService } from './usuario.service';
 import { Repository } from 'typeorm';
 import { TypeOrmTestingConfig } from '../shared/testing-utils/typeorm-testing-config';
-import { UsuarioEntity } from './usuario.entity/usuario.entity';
+import { UsuarioEntity } from './usuario.entity';
 import { getRepositoryToken } from '@nestjs/typeorm';
 
 describe('UsuarioService', () => {
